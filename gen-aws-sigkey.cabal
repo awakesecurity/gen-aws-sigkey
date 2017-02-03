@@ -1,0 +1,72 @@
+name:                gen-aws-sigkey
+version:             1.0.0
+synopsis:            Scoped signing keygen
+homepage:            https://github.com/awakenetworks/gen-aws-sigkey
+license:             Apache-2.0
+license-file:        LICENSE
+author:              Awake Networks
+maintainer:          opensource@awakenetworks.com
+copyright:           2017 Awake Networks
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall -Werror
+  exposed-modules:
+                  Gen.AWS.SigKey
+                , Gen.AWS.SigKey.Lib
+                , Gen.AWS.SigKey.Types
+                , Gen.AWS.SigKey.AesonHelpers
+
+  build-depends:
+                base                  >= 4.7   && < 5
+              , aeson                 >= 0.11
+              , bytestring            >= 0.10
+              , cryptonite            >= 0.19
+              , memory                >= 0.13
+              , old-locale            >= 1.0
+              , optparse-generic      >= 1.1.5
+              , text                  >= 1.2
+              , thyme
+
+  default-language:    Haskell2010
+
+executable gen-aws-sigkey
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N -Wall
+  build-depends:
+                base
+              , aeson
+              , bytestring
+              , lens
+              , optparse-generic
+              , text
+              , thyme
+              , gen-aws-sigkey
+
+  default-language:    Haskell2010
+
+test-suite gen-aws-sigkey-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:
+                base
+              , old-locale
+              , tasty
+              , tasty-golden
+              , tasty-hunit
+              , tasty-quickcheck
+              , text
+              , thyme
+              , gen-aws-sigkey
+
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N -Wall -Werror
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/awakenetworks/gen-aws-sigkey

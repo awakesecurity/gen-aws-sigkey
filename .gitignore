@@ -1,0 +1,15 @@
+dist
+dist-*
+*.o
+*.hi
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+*.prof
+*.aux
+*.hp
+*.eventlog
+.stack-work/
+cabal.project.local
