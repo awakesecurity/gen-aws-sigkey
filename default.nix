@@ -1,6 +1,7 @@
-{ mkDerivation, aeson, base, bytestring, cryptonite, lens, memory
-, old-locale, optparse-generic, stdenv, tasty, tasty-golden
-, tasty-hunit, tasty-quickcheck, text, thyme
+{ mkDerivation, aeson, base, bytestring, cryptonite, ini, lens
+, memory, neat-interpolation, old-locale, optparse-generic, stdenv
+, tasty, tasty-golden, tasty-hunit, tasty-quickcheck, text, thyme
+, turtle
 }:
 mkDerivation {
   pname = "gen-aws-sigkey";
@@ -13,7 +14,8 @@ mkDerivation {
     text thyme
   ];
   executableHaskellDepends = [
-    aeson base bytestring lens optparse-generic text thyme
+    aeson base bytestring ini lens neat-interpolation optparse-generic
+    text thyme turtle
   ];
   testHaskellDepends = [
     base old-locale tasty tasty-golden tasty-hunit tasty-quickcheck

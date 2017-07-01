@@ -23,7 +23,7 @@ data Options w = Options
     <?> "AWS protocol [default: aws4_request]"
   , sigonly  :: w ::: Bool
     <?> "Print the signature only"
-  , key      :: w ::: Text
+  , key      :: w ::: Maybe Text
     <?> "AWS secret access key"
   } deriving (Generic)
 

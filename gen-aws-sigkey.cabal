@@ -41,10 +41,13 @@ executable gen-aws-sigkey
                 base
               , aeson
               , bytestring
+              , ini
               , lens
+              , neat-interpolation
               , optparse-generic
               , text
               , thyme
+              , turtle
               , gen-aws-sigkey
 
   default-language:    Haskell2010
