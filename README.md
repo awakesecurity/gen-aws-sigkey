@@ -1,3 +1,5 @@
+**NOTE**: _This repository is no longer supported or updated by Awake Security / Arista Networks. If you wish to continue to develop this code yourself, we recommend you fork it._
+
 # Welcome!
 
 This is a small Haskell CLI utility that generates AWS V4 scoped signing keys
